@@ -2,42 +2,91 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    color: #fff;
 }
 
 .full-cv {
     height: 100vh;
-    background: linear-gradient(180deg, rgba(255, 0, 0, 0.6), rgba(0, 0, 0, 0.6));    
+    background: linear-gradient(180deg, rgba(255, 0, 0, 0.7), rgba(0, 0, 0, 0.7));    
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .tt {
-    width: 90%;
-    height: 90%;
+    width: 95%;
+    height: 95%;
     /* border: 1px solid #000; */
-    background: linear-gradient(180deg, rgba(255, 0, 0, 1), rgba(0, 0, 0, 1));   
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    /* background: linear-gradient(180deg, rgba(255, 0, 0, 1), rgba(0, 0, 0, 1));   
+    border-radius: 10px; */
 }
 
 .tt .tt-left {
-    width: 50%;
-    height: 100%;
-    border: 1px solid #000;
+    width: 49%;
+    height: 100%;    
+    background: linear-gradient(180deg, rgba(255, 0, 0, 0.8), rgba(0, 0, 0, 0.8));   
+    border-radius: 10px;
 }
 
-.tt-left .header {
-    width: 90%;
+.tt-left .left-header {
+    width: 98%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    /* border-bottom: 1px solid #000; */
+}
+
+.tt-left .left-header .left-header-img {
+    width: 30%;
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.left-header-img img {
+    width: 95%;
     margin: auto;
 }
 
-.tt-left .header img {
-    width: 40%;
+.tt-left .left-header .left-header-text {
+    width: 70%;
+    border-left: 1px solid #000;
+}
+
+.left-header-text .main-title {
+    border-bottom: 1px solid #000;
+}
+
+.sub-main-title ul li {
+    list-style-type: none;
+}
+
+.tt-left .basic-information {
+    width: 98%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.basic-information .information {
+    width: 48%;
+}
+
+.basic-information .education {
+    width: 48%;
+}
+
+.general-title {
+    text-align: center;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
 }
 
 .tt .tt-right {
-    width: 50%;
+    width: 49%;
     height: 100%;
-    border: 1px solid #000;
+    background: linear-gradient(180deg, rgba(255, 0, 0, 0.8), rgba(0, 0, 0, 0.8));   
+    border-radius: 10px;
 }
