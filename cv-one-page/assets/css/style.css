@@ -1,0 +1,43 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.full-cv {
+    height: 100vh;
+    background: linear-gradient(180deg, rgba(255, 0, 0, 0.6), rgba(0, 0, 0, 0.6));    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tt {
+    width: 90%;
+    height: 90%;
+    /* border: 1px solid #000; */
+    background: linear-gradient(180deg, rgba(255, 0, 0, 1), rgba(0, 0, 0, 1));   
+    display: flex;
+    justify-content: center;
+}
+
+.tt .tt-left {
+    width: 50%;
+    height: 100%;
+    border: 1px solid #000;
+}
+
+.tt-left .header {
+    width: 90%;
+    margin: auto;
+}
+
+.tt-left .header img {
+    width: 40%;
+}
+
+.tt .tt-right {
+    width: 50%;
+    height: 100%;
+    border: 1px solid #000;
+}
