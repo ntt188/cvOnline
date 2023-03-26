@@ -2,20 +2,24 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    /* color: #fff; */
+}
+
+.text-white {
     color: #fff;
 }
 
 .full-cv {
     height: 100vh;
-    background: linear-gradient(180deg, rgba(255, 0, 0, 0.7), rgba(0, 0, 0, 0.7));    
+    background: linear-gradient(180deg, rgba(0, 255, 255, 0.6), rgba(0, 0, 0, 0.6));    
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .tt {
-    width: 95%;
-    height: 95%;
+    width: 98%;
+    height: 98%;
     /* border: 1px solid #000; */
     display: flex;
     justify-content: space-between;
@@ -26,8 +30,11 @@
 .tt .tt-left {
     width: 49%;
     height: 100%;    
-    background: linear-gradient(180deg, rgba(255, 0, 0, 0.8), rgba(0, 0, 0, 0.8));   
+    background: linear-gradient(180deg, rgba(0, 255, 255, 0.7), rgba(0, 0, 0, 0.7));   
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 .tt-left .left-header {
@@ -53,14 +60,22 @@
 .tt-left .left-header .left-header-text {
     width: 70%;
     border-left: 1px solid #000;
+    padding-left: 2px;
 }
 
 .left-header-text .main-title {
     border-bottom: 1px solid #000;
+    color: rgba(150, 0, 48, 1);
 }
 
 .sub-main-title ul li {
     list-style-type: none;
+}
+
+.sub-main-title li p {
+    line-height: 1.6;
+    text-align: justify;
+    font-size: 14px;
 }
 
 .tt-left .basic-information {
@@ -72,21 +87,60 @@
 
 .basic-information .information {
     width: 48%;
+    font-size: 14px;
 }
 
 .basic-information .education {
     width: 48%;
+    font-size: 14px;
 }
 
 .general-title {
     text-align: center;
     border-top: 1px solid #000;
     border-bottom: 1px solid #000;
+    margin-bottom: 8px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.information ul li{
+    list-style: none;
+    overflow-wrap: break-word;
+    /* margin: 5px; */
+    line-height: 1.6;
+}
+
+.information li i {
+    margin: 5px;
+}
+
+.information li a {
+    text-decoration: none;
+}
+
+.card-education {
+    line-height: 2;
+}
+
+.tt-left .skill {
+    width: 98%;
+    margin: auto;
+    font-size: 14px;
+    
+}
+
+.skill .card-skill {
+    line-height: 1.6;
+}
+
+.skill p {
+    text-align: justify;
 }
 
 .tt .tt-right {
     width: 49%;
     height: 100%;
-    background: linear-gradient(180deg, rgba(255, 0, 0, 0.8), rgba(0, 0, 0, 0.8));   
+    background: linear-gradient(180deg, rgba(0, 255, 255, 0.7), rgba(0, 0, 0, 0.7));   
     border-radius: 10px;
 }
