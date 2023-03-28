@@ -281,3 +281,18 @@ html {
     list-style-type: none;
 }
 /* certificates and hobbies end */
+/* more-information begin */
+#more-information {
+    border: 2px solid #fff;
+    border-radius: 10px;
+}
+
+#more-information .more-information-text {
+    margin: 0 5px 5px;
+    text-align: justify;
+}
+
+.more-information-text ul {
+    margin: 0 20px;
+}
+/* more-information end */
