@@ -49,7 +49,7 @@ html {
     /* width: 100%; */
     
     /* fix row tràn trên mobile bị tràn làm có khoảng trắng */
-    padding: 0 4px;
+    /* padding: 0 4px; */
     padding-top: 10px;
 }
 
@@ -371,6 +371,15 @@ html {
     margin: 0 0 0 20px;
 }
 
+/* footer */
+footer {
+    margin-top: 48px;
+    height: 48px;
+    background: var(--background-header-color);
+    /* border-top: var(--line-size) solid var(--line-border-color); */
+    box-shadow: 0 0 var(--box-shadow-size) var(--box-shadow-size) var(--shadow-color) ;
+}
+
 @media (max-width: 1023px) {
     .nav {
         display: none;
@@ -388,6 +397,8 @@ html {
 @media (max-width: 739px) {
     #main {
         padding-top: 0;
+        /* fix row tràn trên mobile bị tràn làm có khoảng trắng */
+        padding: 0 4px;
     }
 
     #home {
@@ -415,6 +426,17 @@ html {
     .home-text .sub-main-title {
         padding: 5px;
         background: var(--background-data-color);
+    }
+    .card-experience .col1-card-experience {
+        display: none;
+    }
+    .card-experience .col2-card-experience {
+        width: 40%;
+        border-right: var(--line-size) solid var(--line-border-color);
+    }
+    footer {
+        margin-left: -4px;
+        margin-right: -4px;
     }
 }
 
