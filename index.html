@@ -1,286 +1,324 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV Nguyễn Thanh Thắng</title>
-    <link rel="stylesheet" href="./assets/css/grid.css">
-    <link rel="stylesheet" href="./assets/css/style-cv.css">
+    <meta name="description" content="CV online của Nguyễn Thanh Thắng - Front-end Developer (Internship, Fresher, Junior)">
+
+    <!-- Font chữ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Icon dùng lại từ bản cũ -->
     <link rel="stylesheet" href="./assets/fonts/themify-icons/themify-icons.css">
+    <!-- AOS: hiệu ứng khi cuộn -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+    <!-- Lenis: cuộn trang mượt có quán tính -->
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.20/dist/lenis.css">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Cấu hình Tailwind: thêm font và màu riêng
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['"Be Vietnam Pro"', 'sans-serif'] },
+                    colors: { brand: { 400: '#c084fc', 500: '#a855f7', 600: '#9333ea' } }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="./style.css">
 </head>
-<body>
-    <div id="main">
-        <div id="header">            
-            <div class="grid wide">
-                <div class="row">
-                    
-                    <div class="col l-12">
-                        <ul class="nav" >
-                            <li><a href="#">home</a></li>
-                            <li><a href="#information">information</a></li>
-                            <li><a href="#education">education</a></li>
-                            <li><a href="#skill">skill</a></li>
-                            <li><a href="#work-experience">experience</a></li>
-                            <li><a href="#certificate">certificates</a></li>
-                            <li><a href="#hobbie">hobbies</a></li>
-                            <li><a href="#more-information">more information</a></li>
-                        </ul>                        
+<body class="bg-[#0b0b12] text-slate-300 font-sans antialiased">
 
-                        
-                        <label for="nav-tablet-mobile-input" class="nav__bars-btn">
-                            <i class="ti-menu"></i>
-                        </label>
-
-                        <input type="checkbox" class="nav__input" name="" id="nav-tablet-mobile-input" style="display: none;">
-                        
-                        <label for="nav-tablet-mobile-input" class="nav__overlay"></label>
-                        <!-- nav <= tablet -->
-                        <div class="nav__tab-mob">
-                            <label for="nav-tablet-mobile-input" class="nav__tabmob-close">
-                                <i class="ti-close"></i>
-                            </label>
-                            <ul class="nav_list">
-                                <li><a href="#">home</a></li>
-                                <li><a href="#information">information</a></li>
-                                <li><a href="#education">education</a></li>
-                                <li><a href="#skill">skill</a></li>
-                                <li><a href="#work-experience">experience</a></li>
-                                <li><a href="#certificate">certificates</a></li>
-                                <li><a href="#hobbie">hobbies</a></li>
-                                <li><a href="#more-information">more information</a></li>
-                            </ul> 
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="grid wide">
-            <!-- HOME BEGIN -->
-            <div id="home">
-                <div class="row">
-                    <div class="col l-4 l-o-0 m-5 m-o-0 c-10 c-o-1">
-                        <div class="home-img">
-                            <img src="./assets/img/anhcv.jpg" alt="Ảnh CV">
-                        </div>
-                    </div>
-                    <div class="col l-8 l-o-0 m-7 m-o-0 c-10 c-o-1">
-                        <div class="home-text">
-                            <div class="main-title">
-                                <h1>Nguyễn Thanh Thắng</h1>
-                                <h2>Internship, Fresher, Junior</h2>
-                            </div>
-                            <div class="sub-main-title">
-                                <ul>
-                                    <li>
-                                        <p>
-                                            - Mục tiêu: Hiện tại tiếp thu thêm kiến thức và kinh nghiệm. Mục tiêu hiện tại là được làm việc,
-                                        nâng cao kỹ năng, và học hỏi thêm nhiều công nghệ về front-end (Reactjs, angular, Vuejs,...),
-                                        có thể thử sức với cả back-end. Mục tiêu cho tương lai là trở thành lập trình viên full-stack và
-                                        muốn thử sức ở nhiều vị trí mới.</p>
-                                    </li>
-                                    <li>
-                                        <p>
-                                            - Mong muốn: .Tôi mong muốn được làm việc ở một môi trường chuyên nghiệp, ở đó tôi có thể
-                                            phát triển kỹ năng cần có để phát triển sau này, học hỏi thêm kiến thức mới để hoàn thành
-                                            công việc được giao.
-                                        </p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- HOME END -->
-            <!-- BASIC INFORMATION BEGIN -->            
-            <div class="row">
-                <div class="col l-4 l-o-2 m-6 m-o-0 c-10 c-o-1">
-                    <div id="information">
-                        <div class="data">
-                            <h2 class="general-title">
-                                THÔNG TIN CÁ NHÂN
-                            </h2>
-                            <ul class="information">
-                                <li><i class="ti-calendar"></i>18/08/1999</li>
-                                <li><i class="ti-user"></i>Nam</li>
-                                <li><i class="ti-email"></i>nguyenthanhthang999@gmail.com</li>
-                                <li><i class="ti-mobile"></i>0859669678</li>
-                                <li><i class="ti-facebook"></i><a href="https://www.facebook.com/nguyenthanhthang188" class="text-color-white">https://www.facebook.com/nguyenthanhthang188</a></li>
-                                <li><i class="ti-github"></i><a href="https://github.com/ntt188" class="text-color-white">https://github.com/ntt188</a></li>
-                            </ul>   
-                        </div>
-                    </div>
-                </div>
-                <div class="col l-4 l-o-0 m-6 m-o-0 c-10 c-o-1">
-                    <div id="education">
-                        <div class="data">
-                            <h2 class="general-title">
-                                HỌC VẤN
-                            </h2>
-                            <div class="education">
-                                <div class="card-education">
-                                    <h4>ĐẠI HỌC DUY TÂN</h4>
-                                    <p>CHUYÊN NGÀNH: CÔNG NGHỆ PHẦN MỀM</p>
-                                    <p>8/2017 - 12/2021</p>
-                                    <p>Tốt ngiệp loại: Giỏi, Điểm GPA: 3.21</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col l-4"></div>
-            </div>
-            <!-- BASIC INFORMATION END -->
-            <!-- SKILL BEGIN -->
-            <div class="row">
-                <div class="col l-8 l-o-2 m-12 m-o-0 c-10 c-o-1">
-                    <div id="skill">
-                        <div class="data">
-                            <h2 class="general-title">
-                                CÁC KỸ NĂNG
-                            </h2>
-                            <div class="list-skill">
-                                <div class="card-skill">
-                                    <h4>KIẾN THỨC CƠ BẢN VỀ LẬP TRÌNH</h4>
-                                    <p>
-                                        Kiến thức cơ bản về các ngôn ngữ lập trình
-                                        (C, C++, C#, Java,...), kiến thức về lập trình
-                                        hướng đối tượng (OOP), cơ sở dữ liệu SQL
-                                    </p>
-                                </div>
-                                <div class="card-skill">
-                                    <h4>LẬP TRÌNH GIAO DIỆN</h4>
-                                    <p>
-                                        Các kỹ năng cơ bản của HTML,CSS. Có
-                                        kiến thức cơ bản về Bootstrap, Reactjs,
-                                        Angular.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- SKILL END -->
-            <!-- WORK EXPERIENCE BEGIN -->
-            <div class="row">
-                <div class="col l-8 l-o-2 m-12 m-o-0 c-10 c-o-1">
-                    <div id="work-experience">
-                        <div class="data">
-                            <h2 class="general-title">
-                                KINH NGHIỆM LÀM VIỆC
-                            </h2>
-                            <div class="work-experience">
-                                <div class="card-experience">
-                                    <div class="col1-card-experience">
-                                        <div class="col1-experience-top"></div>
-                                        <div class="col1-experience-bottom"></div>
-                                    </div>
-                                    <div class="col2-card-experience">
-                                        <p class="col2-experience-top">9/2021 - 11/2021</p>
-                                        <h4 class="col2-experience-bottom">FPT SOFTWARE</h4>
-                                    </div>
-                                    <div class="col3-card-experience">
-                                        <h4 class="col3-experience-top">FRESHER</h4>
-                                        <p class="col3-experience-bottom">
-                                            Học các kiến thức về .Net, OOP, FE, CSDL.
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="card-experience">
-                                    <div class="col1-card-experience">
-                                        <div class="col1-experience-top"></div>
-                                        <div class="col1-experience-bottom"></div>
-                                    </div>
-                                    <div class="col2-card-experience">
-                                        <p class="col2-experience-top">11/2021 - 5/2022</p>
-                                        <h4 class="col2-experience-bottom">FPT SOFTWARE</h4>
-                                    </div>
-                                    <div class="col3-card-experience">
-                                        <h4 class="col3-experience-top">NHÂN VIÊN</h4>
-                                        <p class="col3-experience-top">
-                                            Hỗ trợ team hoàn thành project qua các ngôn ngữ react, angular,...
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- WORK EXPERIENCE END -->
-            <!-- CAH BEGIN -->
-            <div class="row">
-                <div class="col l-4 l-o-2 m-6 m-o-0 c-10 c-o-1">
-                    <div id="certificate">
-                        <div class="data">
-                            <h2 class="general-title">
-                                CHỨNG CHỈ
-                            </h2>
-                            <div class="certificates">
-                                <div class="card-certificates">
-                                    <h4 class="card-certificates-top">2018</h4>
-                                    <p class="card-certificates-bottom">
-                                        Certificate of completion of the course LET'S 
-                                        MAKE A GAME WITH engine UNITY
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col l-4 l-o-0 m-6 m-o-0 c-10 c-o-1">
-                    <div id="hobbie">
-                        <div class="data">
-                            <h2 class="general-title">
-                                SỞ THÍCH
-                            </h2>
-                            <ul class="hobbies">
-                                <li>Nghe nhạc: nghe nhạc để thư giản</li>
-                                <li>Tìm hiểu kiến thức xã hội: bệnh tật, sách, thiên văn,...</li>
-                                <li>Du lịch: đi những nơi chưa từng đến.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- CAH END -->
-            <!-- MORE INFORMATION BEGIN -->
-            <div class="row">
-                <div class="col l-8 l-o-2 m-12 m-o-0 c-10 c-o-1">
-                    <div id="more-information">
-                        <div class="data">
-                            <h2 class="general-title">
-                                THÔNG TIN THÊM
-                            </h2>
-                            <div class="more-information-text">
-                                <h4 class="text-heading-color">
-                                    Các dự án đã tham gia trong quá trình học tập tại 
-                                    trường và làm việc tại FPT SOFTWARE:
-                                </h4>
-                                <ul>
-                                    <li>
-                                        Xây dựng ứng dụng Socail media bằng Mern stack: Scrum master, 
-                                        Thiết kế giao diện frontend và code chức năng đăng nhập, đăng ký và làm tester.
-                                    </li>
-                                    <li>
-                                        Xây dựng website bán hàng tích hợp AItìm kiếm: Thiết kế giao diện 
-                                        frontend và làm tester
-                                    </li>
-                                    <li>
-                                        Được tham gia quan sát các dự án liên quan đến 
-                                        react, angular, java, winform, .Net tại FPT SOFTWARE
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>       
-                    </div>
-                </div>
-            </div>
-            <!-- MORE INFORMATION END -->
-        </div>
-        <footer></footer>
+    <!-- Nền trang trí: 2 đốm sáng mờ -->
+    <div class="bg-glow" aria-hidden="true">
+        <span class="glow glow-1"></span>
+        <span class="glow glow-2"></span>
     </div>
+
+    <!-- ===== HEADER ===== -->
+    <header id="header" class="fixed inset-x-0 top-0 z-50 transition-all duration-300 no-print">
+        <nav class="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
+            <a href="#home" class="text-lg font-extrabold text-white">
+                <span class="text-gradient">NTT</span><span class="text-brand-400">.</span>
+            </a>
+
+            <!-- Menu desktop -->
+            <ul class="hidden items-center gap-1 lg:flex">
+                <li><a class="nav-link" href="#home">Home</a></li>
+                <li><a class="nav-link" href="#information">Information</a></li>
+                <li><a class="nav-link" href="#education">Education</a></li>
+                <li><a class="nav-link" href="#skill">Skill</a></li>
+                <li><a class="nav-link" href="#work-experience">Experience</a></li>
+                <li><a class="nav-link" href="#projects">Projects</a></li>
+                <li><a class="nav-link" href="#certificate">Certificates</a></li>
+                <li><a class="nav-link" href="#hobbie">Hobbies</a></li>
+            </ul>
+
+            <div class="flex items-center gap-2">
+                <button onclick="window.print()" class="hidden rounded-full border border-brand-500/50 px-4 py-1.5 text-sm font-medium text-brand-400 transition hover:bg-brand-500 hover:text-white sm:inline-flex items-center gap-2">
+                    <i class="ti-download"></i> Tải PDF
+                </button>
+                <!-- Nút mở menu mobile -->
+                <button id="menu-btn" class="text-2xl text-white lg:hidden" aria-label="Mở menu">
+                    <i class="ti-menu"></i>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Menu mobile -->
+        <div id="mobile-menu" class="mobile-menu lg:hidden">
+            <ul class="flex flex-col gap-1 p-4">
+                <li><a class="nav-link block" href="#home">Home</a></li>
+                <li><a class="nav-link block" href="#information">Information</a></li>
+                <li><a class="nav-link block" href="#education">Education</a></li>
+                <li><a class="nav-link block" href="#skill">Skill</a></li>
+                <li><a class="nav-link block" href="#work-experience">Experience</a></li>
+                <li><a class="nav-link block" href="#projects">Projects</a></li>
+                <li><a class="nav-link block" href="#certificate">Certificates</a></li>
+                <li><a class="nav-link block" href="#hobbie">Hobbies</a></li>
+                <li><button onclick="window.print()" class="nav-link w-full text-left"><i class="ti-download mr-2"></i>Tải PDF</button></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="relative mx-auto max-w-6xl px-4">
+
+        <!-- ===== HOME / HERO ===== -->
+        <section id="home" class="flex min-h-screen flex-col items-center justify-center gap-10 pt-24 pb-12 md:flex-row md:gap-16">
+            <div class="avatar-wrap shrink-0" data-aos="zoom-in">
+                <img src="./assets/img/anhcv.jpg" alt="Ảnh CV Nguyễn Thanh Thắng" class="avatar">
+            </div>
+
+            <div class="text-center md:text-left" data-aos="fade-left" data-aos-delay="150">
+                <p class="mb-2 font-medium text-brand-400">Xin chào, tôi là</p>
+                <h1 class="text-4xl font-extrabold leading-tight text-white sm:text-5xl lg:text-6xl">
+                    <span class="text-gradient">Nguyễn Thanh Thắng</span>
+                </h1>
+                <h2 class="mt-3 h-8 text-xl font-semibold text-slate-200 sm:text-2xl">
+                    <span id="typed"></span>
+                </h2>
+                <!-- Nội dung gốc dự phòng khi JS không chạy -->
+                <noscript><h2 class="text-xl text-slate-200">Internship, Fresher, Junior</h2></noscript>
+
+                <div class="mt-6 space-y-4 text-justify leading-relaxed">
+                    <p><span class="font-semibold text-brand-400">Mục tiêu:</span>
+                        Hiện tại tiếp thu thêm kiến thức và kinh nghiệm. Mục tiêu hiện tại là được làm việc,
+                        nâng cao kỹ năng, và học hỏi thêm nhiều công nghệ về front-end (ReactJS, Angular, VueJS,...),
+                        có thể thử sức với cả back-end. Mục tiêu cho tương lai là trở thành lập trình viên full-stack và
+                        muốn thử sức ở nhiều vị trí mới.</p>
+                    <p><span class="font-semibold text-brand-400">Mong muốn:</span>
+                        Tôi mong muốn được làm việc ở một môi trường chuyên nghiệp, ở đó tôi có thể
+                        phát triển kỹ năng cần có để phát triển sau này, học hỏi thêm kiến thức mới để hoàn thành
+                        công việc được giao.</p>
+                </div>
+
+                <div class="mt-8 flex flex-wrap justify-center gap-3 md:justify-start no-print">
+                    <a href="mailto:nguyenthanhthang999@gmail.com" class="btn-primary"><i class="ti-email"></i> Liên hệ</a>
+                    <a href="https://github.com/ntt188" target="_blank" rel="noopener" class="btn-ghost"><i class="ti-github"></i> GitHub</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== QUICK STATS (mới) ===== -->
+        <section class="grid grid-cols-2 gap-4 md:grid-cols-4" data-aos="fade-up">
+            <div class="card stat"><span class="stat-num">3.21</span><span class="stat-label">GPA – Loại Giỏi</span></div>
+            <div class="card stat"><span class="stat-num">8+</span><span class="stat-label">Tháng tại FPT Software</span></div>
+            <div class="card stat"><span class="stat-num">3</span><span class="stat-label">Dự án đã tham gia</span></div>
+            <div class="card stat"><span class="stat-num">1</span><span class="stat-label">Chứng chỉ</span></div>
+        </section>
+
+        <!-- ===== THÔNG TIN CÁ NHÂN + HỌC VẤN ===== -->
+        <section class="mt-24 grid gap-6 md:grid-cols-2">
+            <div id="information" class="card section-anchor" data-aos="fade-up">
+                <h2 class="section-title"><i class="ti-id-badge"></i> Thông tin cá nhân</h2>
+                <ul class="space-y-3">
+                    <li class="info-row"><i class="ti-calendar"></i><span>18/08/1999</span></li>
+                    <li class="info-row"><i class="ti-user"></i><span>Nam</span></li>
+                    <li class="info-row"><i class="ti-email"></i><a href="mailto:nguyenthanhthang999@gmail.com">nguyenthanhthang999@gmail.com</a></li>
+                    <li class="info-row"><i class="ti-mobile"></i><a href="tel:0859669678">0859669678</a></li>
+                    <li class="info-row"><i class="ti-facebook"></i><a href="https://www.facebook.com/nguyenthanhthang188" target="_blank" rel="noopener">https://www.facebook.com/nguyenthanhthang188</a></li>
+                    <li class="info-row"><i class="ti-github"></i><a href="https://github.com/ntt188" target="_blank" rel="noopener">https://github.com/ntt188</a></li>
+                </ul>
+            </div>
+
+            <div id="education" class="card section-anchor" data-aos="fade-up" data-aos-delay="100">
+                <h2 class="section-title"><i class="ti-book"></i> Học vấn</h2>
+                <div class="flex gap-4">
+                    <div class="icon-box"><i class="ti-crown"></i></div>
+                    <div class="space-y-1">
+                        <h3 class="text-lg font-bold text-white">ĐẠI HỌC DUY TÂN</h3>
+                        <p>Chuyên ngành: <span class="text-slate-100">Công nghệ phần mềm</span></p>
+                        <p class="text-sm text-brand-400"><i class="ti-time mr-1"></i>8/2017 – 12/2021</p>
+                        <p>Tốt nghiệp loại: <span class="font-semibold text-slate-100">Giỏi</span>, Điểm GPA: <span class="font-semibold text-slate-100">3.21</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== KỸ NĂNG ===== -->
+        <section id="skill" class="mt-24 section-anchor">
+            <h2 class="section-heading" data-aos="fade-up">Các kỹ năng</h2>
+            <div class="grid gap-6 md:grid-cols-2">
+                <div class="card" data-aos="fade-up">
+                    <div class="icon-box mb-4"><i class="ti-server"></i></div>
+                    <h3 class="mb-2 text-lg font-bold text-white">Kiến thức cơ bản về lập trình</h3>
+                    <p class="leading-relaxed">Kiến thức cơ bản về các ngôn ngữ lập trình (C, C++, C#, Java,...),
+                        kiến thức về lập trình hướng đối tượng (OOP), cơ sở dữ liệu SQL.</p>
+                </div>
+                <div class="card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="icon-box mb-4"><i class="ti-layout"></i></div>
+                    <h3 class="mb-2 text-lg font-bold text-white">Lập trình giao diện</h3>
+                    <p class="leading-relaxed">Các kỹ năng cơ bản của HTML, CSS. Có kiến thức cơ bản về Bootstrap,
+                        ReactJS, Angular.</p>
+                </div>
+            </div>
+
+            <!-- Tech stack (mới) -->
+            <div class="card mt-6" data-aos="fade-up">
+                <h3 class="mb-4 font-semibold text-white"><i class="ti-package mr-2 text-brand-400"></i>Công nghệ đã sử dụng</h3>
+                <div class="space-y-4">
+                    <div>
+                        <p class="tag-group">Front-end</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span>
+                            <span class="tag">Bootstrap</span><span class="tag">ReactJS</span><span class="tag">Angular</span>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="tag-group">Back-end &amp; Ngôn ngữ</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tag">C</span><span class="tag">C++</span><span class="tag">C#</span>
+                            <span class="tag">.NET</span><span class="tag">WinForm</span><span class="tag">Java</span>
+                            <span class="tag">Node.js</span><span class="tag">Express</span>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="tag-group">Cơ sở dữ liệu &amp; Công cụ</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tag">SQL</span><span class="tag">MongoDB</span><span class="tag">Git / GitHub</span>
+                            <span class="tag">OOP</span><span class="tag">Scrum</span><span class="tag">Testing</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== KINH NGHIỆM LÀM VIỆC: timeline ===== -->
+        <section id="work-experience" class="mt-24 section-anchor">
+            <h2 class="section-heading" data-aos="fade-up">Kinh nghiệm làm việc</h2>
+            <ol class="timeline">
+                <li class="timeline-item" data-aos="fade-up">
+                    <span class="timeline-dot"></span>
+                    <div class="card">
+                        <div class="flex flex-wrap items-center justify-between gap-2">
+                            <h3 class="text-lg font-bold text-white">NHÂN VIÊN</h3>
+                            <span class="badge">11/2021 – 5/2022</span>
+                        </div>
+                        <p class="mt-1 font-semibold text-brand-400">FPT SOFTWARE</p>
+                        <p class="mt-3 leading-relaxed">Hỗ trợ team hoàn thành project qua các ngôn ngữ React, Angular,...</p>
+                    </div>
+                </li>
+                <li class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+                    <span class="timeline-dot"></span>
+                    <div class="card">
+                        <div class="flex flex-wrap items-center justify-between gap-2">
+                            <h3 class="text-lg font-bold text-white">FRESHER</h3>
+                            <span class="badge">9/2021 – 11/2021</span>
+                        </div>
+                        <p class="mt-1 font-semibold text-brand-400">FPT SOFTWARE</p>
+                        <p class="mt-3 leading-relaxed">Học các kiến thức về .Net, OOP, FE, CSDL.</p>
+                    </div>
+                </li>
+            </ol>
+        </section>
+
+        <!-- ===== DỰ ÁN / THÔNG TIN THÊM ===== -->
+        <section id="projects" class="mt-24 section-anchor">
+            <div id="more-information"></div>
+            <h2 class="section-heading" data-aos="fade-up">Dự án &amp; thông tin thêm</h2>
+            <p class="mb-8 text-center" data-aos="fade-up">Các dự án đã tham gia trong quá trình học tập tại trường và làm việc tại FPT SOFTWARE:</p>
+
+            <div class="grid gap-6 md:grid-cols-3">
+                <article class="card project" data-aos="fade-up">
+                    <div class="icon-box mb-4"><i class="ti-comments-smiley"></i></div>
+                    <h3 class="mb-2 text-lg font-bold text-white">Ứng dụng Social media (MERN stack)</h3>
+                    <p class="mb-4 flex-1 leading-relaxed">Xây dựng ứng dụng Social media bằng MERN stack: Scrum master,
+                        thiết kế giao diện frontend và code chức năng đăng nhập, đăng ký và làm tester.</p>
+                    <div class="mb-4 flex flex-wrap gap-2">
+                        <span class="tag tag-sm">MongoDB</span><span class="tag tag-sm">Express</span>
+                        <span class="tag tag-sm">React</span><span class="tag tag-sm">Node.js</span>
+                    </div>
+                    <p class="text-sm"><span class="text-slate-400">Vai trò:</span> Scrum master · Frontend · Tester</p>
+                </article>
+
+                <article class="card project" data-aos="fade-up" data-aos-delay="100">
+                    <div class="icon-box mb-4"><i class="ti-shopping-cart"></i></div>
+                    <h3 class="mb-2 text-lg font-bold text-white">Website bán hàng tích hợp AI</h3>
+                    <p class="mb-4 flex-1 leading-relaxed">Xây dựng website bán hàng tích hợp AI tìm kiếm: thiết kế giao diện
+                        frontend và làm tester.</p>
+                    <div class="mb-4 flex flex-wrap gap-2">
+                        <span class="tag tag-sm">Frontend</span><span class="tag tag-sm">AI Search</span>
+                    </div>
+                    <p class="text-sm"><span class="text-slate-400">Vai trò:</span> Frontend · Tester</p>
+                </article>
+
+                <article class="card project" data-aos="fade-up" data-aos-delay="200">
+                    <div class="icon-box mb-4"><i class="ti-briefcase"></i></div>
+                    <h3 class="mb-2 text-lg font-bold text-white">Dự án tại FPT Software</h3>
+                    <p class="mb-4 flex-1 leading-relaxed">Được tham gia quan sát các dự án liên quan đến
+                        React, Angular, Java, WinForm, .Net tại FPT SOFTWARE.</p>
+                    <div class="mb-4 flex flex-wrap gap-2">
+                        <span class="tag tag-sm">React</span><span class="tag tag-sm">Angular</span>
+                        <span class="tag tag-sm">Java</span><span class="tag tag-sm">.NET</span>
+                    </div>
+                    <p class="text-sm"><span class="text-slate-400">Vai trò:</span> Quan sát · Hỗ trợ</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- ===== CHỨNG CHỈ + SỞ THÍCH ===== -->
+        <section class="mt-24 grid gap-6 md:grid-cols-2">
+            <div id="certificate" class="card section-anchor" data-aos="fade-up">
+                <h2 class="section-title"><i class="ti-medall"></i> Chứng chỉ</h2>
+                <div class="flex gap-4">
+                    <span class="badge h-fit">2018</span>
+                    <p class="leading-relaxed">Certificate of completion of the course LET'S MAKE A GAME WITH engine UNITY</p>
+                </div>
+            </div>
+
+            <div id="hobbie" class="card section-anchor" data-aos="fade-up" data-aos-delay="100">
+                <h2 class="section-title"><i class="ti-heart"></i> Sở thích</h2>
+                <ul class="space-y-3">
+                    <li class="info-row"><i class="ti-music-alt"></i><span>Nghe nhạc: nghe nhạc để thư giãn</span></li>
+                    <li class="info-row"><i class="ti-book"></i><span>Tìm hiểu kiến thức xã hội: bệnh tật, sách, thiên văn,...</span></li>
+                    <li class="info-row"><i class="ti-world"></i><span>Du lịch: đi những nơi chưa từng đến.</span></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===== FOOTER (mới) ===== -->
+    <footer class="mt-24 border-t border-white/10 py-10">
+        <div class="mx-auto flex max-w-6xl flex-col items-center gap-4 px-4 text-center">
+            <p class="text-lg font-semibold text-white">Cùng làm việc với nhau nhé!</p>
+            <div class="flex gap-3 no-print">
+                <a href="mailto:nguyenthanhthang999@gmail.com" class="social" aria-label="Email"><i class="ti-email"></i></a>
+                <a href="https://github.com/ntt188" target="_blank" rel="noopener" class="social" aria-label="GitHub"><i class="ti-github"></i></a>
+                <a href="https://www.facebook.com/nguyenthanhthang188" target="_blank" rel="noopener" class="social" aria-label="Facebook"><i class="ti-facebook"></i></a>
+            </div>
+            <p class="text-sm text-slate-500">© <span id="year"></span> Nguyễn Thanh Thắng</p>
+        </div>
+    </footer>
+
+    <!-- Nút cuộn lên đầu trang -->
+    <a href="#home" id="to-top" class="to-top no-print" aria-label="Lên đầu trang"><i class="ti-angle-up"></i></a>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="./main.js"></script>
 </body>
 </html>
