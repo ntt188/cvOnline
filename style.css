@@ -74,11 +74,37 @@
     position: relative;
     width: 15rem;
     height: 15rem;
-    padding: 5px;
+    padding: 6px;
     border-radius: 50%;
-    background: conic-gradient(from 0deg, #a855f7, #ec4899, #6366f1, #a855f7);
-    animation: spin 8s linear infinite;
-    box-shadow: 0 0 60px rgba(168, 85, 247, 0.45);
+    box-shadow: 0 0 60px rgba(168, 85, 247, 0.35);
+}
+
+/* Vòng sáng: một vệt sáng chạy quanh viền, đuôi mờ dần như sao chổi */
+.avatar-wrap::before,
+.avatar-wrap::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background:
+        conic-gradient(from 0deg,
+            transparent 0%,
+            transparent 55%,
+            #7c3aed 70%,
+            #c084fc 82%,
+            #f0abfc 92%,
+            #ffffff 97%,
+            transparent 100%),
+        rgba(168, 85, 247, 0.25); /* vòng nền mờ để viền không bị đứt */
+    animation: spin 4s linear infinite;
+}
+
+/* Lớp phía sau: cùng vệt sáng nhưng làm nhòe để tạo quầng sáng tỏa ra */
+.avatar-wrap::after {
+    inset: -6px;
+    filter: blur(14px);
+    opacity: 0.9;
+    z-index: -1;
 }
 
 .avatar {
@@ -86,9 +112,12 @@
     height: 100%;
     border-radius: 50%;
     object-fit: cover;
+    /* lấy phần trên của ảnh dọc, không cắt mất đầu */
+    object-position: center 20%;
     border: 4px solid #0b0b12;
-    /* xoay ngược để ảnh đứng yên trong khi viền xoay */
-    animation: spin 8s linear infinite reverse;
+    /* nằm trên vòng màu */
+    position: relative;
+    z-index: 1;
 }
 
 @keyframes spin {
@@ -140,8 +169,50 @@
 
 .card:hover {
     transform: translateY(-4px);
-    border-color: rgba(168, 85, 247, 0.5);
-    box-shadow: 0 12px 40px rgba(168, 85, 247, 0.15);
+    border-color: rgba(168, 85, 247, 0.25);
+    box-shadow: 0 12px 40px rgba(168, 85, 247, 0.25);
+}
+
+/* Vệt sáng chạy quanh viền card khi rê chuột (cùng kiểu với ảnh đại diện).
+   Card hình chữ nhật nên không xoay cả lớp được; thay vào đó xoay GÓC của gradient
+   bằng biến --angle. @property cho trình duyệt biết --angle là góc để animate được. */
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    inset: -1px; /* phủ lên đường viền 1px */
+    padding: 2px; /* độ dày vệt sáng */
+    border-radius: inherit;
+    background: conic-gradient(from var(--angle),
+        transparent 0%,
+        transparent 55%,
+        #7c3aed 70%,
+        #c084fc 82%,
+        #f0abfc 92%,
+        #ffffff 97%,
+        transparent 100%);
+    /* Mask: khoét phần giữa, chỉ giữ lại phần viền dày bằng padding */
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    animation: border-spin 3s linear infinite paused;
+}
+
+.card:hover::before {
+    opacity: 1;
+    animation-play-state: running;
+}
+
+@keyframes border-spin {
+    to { --angle: 360deg; }
 }
 
 /* Bù chiều cao header khi bấm menu nhảy tới */
@@ -300,6 +371,47 @@
     box-shadow: 0 0 0 4px rgba(168, 85, 247, 0.25), 0 0 16px #a855f7;
 }
 
+/* Vệt sáng chạy dọc đường timeline (cùng màu với vệt sáng ở ảnh đại diện) */
+.timeline::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -2px; /* nằm đúng lên đường viền trái 2px */
+    width: 2px;
+    height: 120px;
+    border-radius: 9999px;
+    background: linear-gradient(to bottom, transparent, #7c3aed, #c084fc, #f0abfc, #ffffff);
+    box-shadow: 0 0 10px #c084fc, 0 0 20px #a855f7;
+    animation: line-run 3s ease-in-out infinite;
+}
+
+@keyframes line-run {
+    0%   { top: -120px; opacity: 0; }
+    15%  { opacity: 1; }
+    85%  { opacity: 1; }
+    100% { top: 100%; opacity: 0; }
+}
+
+/* Chấm phát ra vòng sáng lan rộng như nhịp tim */
+.timeline-dot::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 2px solid #c084fc;
+    animation: dot-pulse 2s ease-out infinite;
+}
+
+/* Chấm thứ hai trễ nhịp một chút để hai chấm không đập cùng lúc */
+.timeline-item:nth-child(2) .timeline-dot::after {
+    animation-delay: 1s;
+}
+
+@keyframes dot-pulse {
+    from { transform: scale(1); opacity: 0.9; }
+    to   { transform: scale(3); opacity: 0; }
+}
+
 /* ===== Footer ===== */
 .social {
     display: grid;
@@ -345,8 +457,11 @@
 
 /* Người dùng muốn giảm chuyển động thì tắt animation */
 @media (prefers-reduced-motion: reduce) {
-    .avatar-wrap,
-    .avatar,
+    .avatar-wrap::before,
+    .avatar-wrap::after,
+    .card::before,
+    .timeline::before,
+    .timeline-dot::after,
     .text-gradient {
         animation: none;
     }
@@ -371,10 +486,13 @@
         padding-top: 0;
     }
 
-    .avatar-wrap,
-    .avatar {
-        animation: none;
+    .avatar-wrap {
         box-shadow: none;
+    }
+
+    .avatar-wrap::before,
+    .avatar-wrap::after {
+        animation: none;
     }
 
     .avatar-wrap {
@@ -392,6 +510,12 @@
     .section-heading,
     .section-title {
         color: #111 !important;
+    }
+
+    .card::before,
+    .timeline::before,
+    .timeline-dot::after {
+        display: none;
     }
 
     .card {
