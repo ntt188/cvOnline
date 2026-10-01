@@ -113,7 +113,7 @@
     border-radius: 50%;
     object-fit: cover;
     /* lấy phần trên của ảnh dọc, không cắt mất đầu */
-    object-position: center 20%;
+    object-position: center 15%;
     border: 4px solid #0b0b12;
     /* nằm trên vòng màu */
     position: relative;
@@ -534,4 +534,30 @@
         opacity: 1 !important;
         transform: none !important;
     }
+}
+
+/* ===== Nút chuyển ngôn ngữ VI | EN ===== */
+.lang-switch {
+    display: inline-flex;
+    padding: 3px;
+    border-radius: 9999px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.lang-switch button {
+    border-radius: 9999px;
+    padding: 0.25rem 0.7rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #94a3b8;
+    transition: color 0.2s, background 0.2s;
+}
+
+.lang-switch button:hover {
+    color: #fff;
+}
+
+.lang-switch button.active {
+    color: #fff;
+    background: linear-gradient(90deg, #9333ea, #db2777);
 }

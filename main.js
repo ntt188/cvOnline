@@ -82,3 +82,55 @@ document.querySelectorAll('#home, #information, #education, #skill, #work-experi
 
 // 6. Năm hiện tại cho footer
 document.getElementById('year').textContent = new Date().getFullYear();
+
+// 7. Đa ngôn ngữ (VI / EN)
+//    Thứ tự chọn ngôn ngữ: lựa chọn đã lưu -> ngôn ngữ trình duyệt -> tiếng Anh
+const SUPPORTED_LANGS = Object.keys(translations); // ['vi', 'en']
+
+function getInitialLang() {
+    try {
+        const saved = localStorage.getItem('lang');
+        if (SUPPORTED_LANGS.includes(saved)) return saved;
+    } catch (e) {
+        // localStorage có thể bị chặn (chế độ ẩn danh...), bỏ qua
+    }
+    return navigator.language.toLowerCase().startsWith('vi') ? 'vi' : 'en';
+}
+
+function setLang(lang) {
+    const dict = translations[lang];
+    document.documentElement.lang = lang;
+
+    // Chữ hiển thị
+    document.querySelectorAll('[data-i18n]').forEach((el) => {
+        el.textContent = dict[el.dataset.i18n];
+    });
+    // Các thuộc tính không hiển thị: aria-label, alt của ảnh, meta description
+    document.querySelectorAll('[data-i18n-aria]').forEach((el) => {
+        el.setAttribute('aria-label', dict[el.dataset.i18nAria]);
+    });
+    document.querySelectorAll('[data-i18n-alt]').forEach((el) => {
+        el.alt = dict[el.dataset.i18nAlt];
+    });
+    document.querySelectorAll('[data-i18n-content]').forEach((el) => {
+        el.content = dict[el.dataset.i18nContent];
+    });
+
+    // Tô sáng nút của ngôn ngữ đang chọn
+    document.querySelectorAll('[data-lang]').forEach((btn) => {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+        btn.setAttribute('aria-pressed', btn.dataset.lang === lang);
+    });
+
+    try {
+        localStorage.setItem('lang', lang);
+    } catch (e) {
+        // không lưu được thì lần sau dùng lại ngôn ngữ trình duyệt
+    }
+}
+
+document.querySelectorAll('[data-lang]').forEach((btn) => {
+    btn.addEventListener('click', () => setLang(btn.dataset.lang));
+});
+
+setLang(getInitialLang());
